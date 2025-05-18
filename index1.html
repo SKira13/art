@@ -44,3 +44,36 @@
     </nav>
   </header>
 
+  <script>
+    const masters = [
+      { name: 'Олег', profession: 'автомеханік', image: 'https://via.placeholder.com/150?text=1' },
+      { name: 'Тарас', profession: 'сантехнік', image: 'https://via.placeholder.com/150?text=2' },
+      { name: 'Гаврило', profession: 'медвежатник', image: 'https://via.placeholder.com/150?text=3' },
+      { name: 'Іван', profession: 'електрик', image: 'https://via.placeholder.com/150?text=4' },
+      { name: 'Сергій', profession: 'будівельник', image: 'https://via.placeholder.com/150?text=5' },
+      { name: 'Петро', profession: 'плиточник', image: 'https://via.placeholder.com/150?text=6' },
+      { name: 'Андрій', profession: 'мебляр', image: 'https://via.placeholder.com/150?text=7' },
+      { name: 'Дмитро', profession: 'маляр', image: 'https://via.placeholder.com/150?text=8' },
+      { name: 'Василь', profession: 'штукатур', image: 'https://via.placeholder.com/150?text=9' },
+      { name: 'Юрій', profession: 'слюсар', image: 'https://via.placeholder.com/150?text=10' },
+    ];
+
+    const container = document.getElementById('mastersContainer');
+
+    masters.forEach(master => {
+      const card = document.createElement('div');
+      card.className = 'card';
+
+      card.innerHTML = `
+        <img src="${master.image}" alt="${master.name}">
+        <div class="name">${master.name}</div>
+        <div class="profession">${master.profession}</div>
+        <div class="buttons">
+          <button class="order-btn">Order</button>
+          <span class="heart" onclick="this.classList.toggle('liked')">♡</span>
+        </div>
+      `;
+
+      container.appendChild(card);
+    });
+  </script>
